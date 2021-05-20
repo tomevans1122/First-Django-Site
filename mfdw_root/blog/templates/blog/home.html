@@ -1,0 +1,118 @@
+{% extends "blog/base.html" %} 
+
+{% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+    }
+    
+    .head_text {
+        color: white;
+    }
+    
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to Warmongers! </h3>
+                    <p class="text-light">This is your one stop shop for upcoming UFC cards - the latest news, fan discussions, polls and most of all the fight simulator! 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Try Static input here -->
+ {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style1.css' %}">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 30px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<!-- 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style1.css' %}"> -->
+
+<div class="row">
+  <div class="column side">
+    <h2>News</h2>
+    <p>Rolling news articles and tweets</p>
+  </div>
+  
+  <div class="column middle">
+    <h2>Main Content</h2>
+    <p> This is where the UFC card fight details will be!</p>
+  </div>
+  
+  <div class="column side">
+
+    {% block sidebar %} {% include 'blog/sidebar-blog.html' %} {% endblock sidebar %}
+    {% block sidebar1 %} {% include 'blog/sidebar-polls.html' %} {% endblock sidebar1 %}
+
+  </div>
+ 
+
+</div>
+
+  
+</body>
+</html>
+
+
+
+
+{% endblock content %}
