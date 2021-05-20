@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %} 
+
+{% block content %}
+
+<!-- Section that imports static css files -->
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <p> {{ choice.votes }} </p> 
+{% endfor %}
+</ul>
+
+<p> Print total votes here somehow???? </p>
+<p> Need to create a horizontal bar chart along with percentages </p>
+
+
+
+
+
+<a href="{% url 'polls:index' %}">Vote for another fight?</a>
+
+
+{%endblock content%}
